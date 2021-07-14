@@ -5,13 +5,13 @@ import shoppingBag from '../../assets/shopping-bag.png'
 import './cart-icon.styles.scss'
 
 const CartIcon = () => {
-  const { itemCount } = useContext(CartContext)
+  const { itemCount, cartItems } = useContext(CartContext)
   return (
     <div className="cart-container">
       <img src={shoppingBag} alt="shopping-cart-icon" />
       {
         itemCount > 0 
-        ? <span className="cart-count">5</span> 
+        ? <span className="cart-count">{itemCount}</span> 
         : null
       }
       
