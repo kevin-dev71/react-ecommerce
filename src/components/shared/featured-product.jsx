@@ -10,7 +10,7 @@ import { isInCart } from "../../helpers";
 const FeaturedProduct = (props) => {
   const { title, imageUrl, price, history, id, description } = props;
   const product = { title, imageUrl, price, id, description };
-  const { addProduct, cartItems } = useContext(CartContext);
+  const { addProduct, cartItems, increase } = useContext(CartContext);
 
   return (
     <div className="featured-product">
@@ -32,7 +32,7 @@ const FeaturedProduct = (props) => {
           </button>
         ) : <button
         className="button is-white nomad-btn"
-        onClick={() => {}}
+        onClick={() => increase(product)}
         id="btn-white-outline"
       >
         ADD MORE
